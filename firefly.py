@@ -1,7 +1,6 @@
 #!/usr/bin/env python2
 
 import pygame as pg
-import pygame.gfxdraw as gfxdraw
 import numpy
 
 from random import randint, random

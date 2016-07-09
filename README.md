@@ -1,6 +1,6 @@
-# firefly_screensave
+# firefly_screensaver
 
-The Firefly Screensave
+The Firefly Screensaver
 ______________________
 
 Fireflys is so beautiful.

@@ -71,14 +71,15 @@ class Firefly(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.radiu = randint(10, 50)
         self.color = pg.Color(0, 255, 0)
-        speed = float(self.radiu - 9)/15
+        speed = float(self.radiu - 7)/15
 
         self.image_static = pg.transform.scale(firefly_image, (self.radiu*2+1, self.radiu*2+1))
         self.image = self.image_static.copy()
         self.rect = self.image.get_rect()
         self.x, self.y = self.rect.center = initpos
 
-        self.speed = speed*cos(random()*2*pi), speed*sin(random()*2*pi)
+        d = random()*2*pi
+        self.speed = speed*cos(d), speed*sin(d)
 
         self.state = SHOWING
         self.timer = 0
@@ -104,7 +105,7 @@ def main():
 
     info = pg.display.Info()
     winsize = width, height = info.current_w, info.current_h
-    screen = pg.display.set_mode((winsize), pg.FULLSCREEN|pg.HWSURFACE)
+    screen = pg.display.set_mode((winsize))#, pg.FULLSCREEN|pg.HWSURFACE)
 
     pg.display.set_caption('Firefly')
     globals()['firefly_image'] = firefly_image.convert_alpha()
